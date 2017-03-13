@@ -41,6 +41,7 @@ SRC = ft_putnbr_fd.c		\
 	  ft_strcpy.c			\
 	  ft_strcat.c			\
 	  ft_strncat.c			\
+	  ft_strlcat.c			\
 	  ft_strdup.c			\
 	  ft_memset.c			\
 	  ft_bzero.c			\
@@ -66,6 +67,7 @@ SRC = ft_putnbr_fd.c		\
 	  ft_strncmp.c			\
 	  ft_strncpy.c			\
 	  ft_strnstr.c			\
+	  ft_strsplit.c			\
 
 
 OBJ = ft_putnbr_fd.o		\
@@ -95,6 +97,7 @@ OBJ = ft_putnbr_fd.o		\
 	  ft_strcpy.o			\
 	  ft_strcat.o			\
 	  ft_strncat.o			\
+	  ft_strlcat.o			\
 	  ft_strdup.o			\
 	  ft_memset.o			\
 	  ft_bzero.o			\
@@ -120,6 +123,7 @@ OBJ = ft_putnbr_fd.o		\
 	  ft_strncmp.o			\
 	  ft_strncpy.o			\
 	  ft_strnstr.o			\
+	  ft_strsplit.o			\
 
 
 all: $(NAME)
