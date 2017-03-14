@@ -15,25 +15,25 @@
 char	*ft_strtrim(char const *s)
 {
 	int		i;
-	int		j;
-	int		index;
+	int		len;
 	char	*str;
 
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	index = -1;
-	i = 0;
-	j = ft_strlen(s) - 1;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
-	if (!s[i])
-		return ("");
-	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
-		j--;
-	if (!(str = ft_strnew(j - i + 3)))
+	len = ft_strlen(s);
+	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
+		len--;
+	i = -1;
+	while (s[++i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		len--;
+	if (len <= 0)
+		len = 0;
+	if (!(str = ft_strnew(len)))
 		return (NULL);
-	while (s[i] && i <= j)
-		str[++index] = s[i++];
-	str[++index] = '\0';
+	s += i;
+	i = -1;
+	while (++i < len)
+		str[i] = *s++;
+	str[i] = '\0';
 	return (str);
 }
