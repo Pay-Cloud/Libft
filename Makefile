@@ -10,13 +10,15 @@
 #                                                                              #
 # **************************************************************************** #
 
+#_Colors_#
+
 GREEN	=	echo "\x1b[32m $1 \x1b[0m $2"
  
 PURPLE	=	echo "\x1b[35m $1 \x1b[0m $2"
 
-NAME	=	libft.a
+#_Files_#
 
-FLAG 	=	-Wall -Wextra -Werror
+NAME	=	libft.a
 
 SRC 	=	ft_putnbr_fd.c		\
 			ft_putnbr.c			\
@@ -72,8 +74,14 @@ SRC 	=	ft_putnbr_fd.c		\
 			ft_strncpy.c		\
 			ft_strnstr.c		\
 			ft_strsplit.c		\
+			ft_fdlen.c			\
+			ft_fdcpy.c			\
 
 OBJ		=	$(SRC:.c=.o)
+
+#_Compilation__________________________#
+
+FLAG 	=	-Wall -Wextra -Werror
 
 all: $(NAME)
 

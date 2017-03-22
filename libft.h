@@ -13,11 +13,10 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <string.h>
+# include <fcntl.h>
+
 
 void		ft_putchar(unsigned char c);
 void		ft_putchar_fd(char c, int fd);
@@ -68,6 +67,9 @@ void		ft_memdel(void **ap);
 
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strnew(size_t size);
+
+int			ft_fdlen(char *s);
+char		*ft_fdcpy(char *av);
 
 char		*ft_strcat(char *dest, const char *src);
 char		*ft_strncat(char *dest, const char *src, size_t n);
