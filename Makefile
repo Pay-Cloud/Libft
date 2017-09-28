@@ -76,6 +76,7 @@ SRC 	=	ft_putnbr_fd.c		\
 			ft_strsplit.c		\
 			ft_fdlen.c			\
 			ft_fdcpy.c			\
+			get_next_line.c		\
 
 OBJ		=	$(SRC:.c=.o)
 

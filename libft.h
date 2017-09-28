@@ -13,10 +13,16 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define BUFF_SIZE 32
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
 
+
+
+
+int		get_next_line(int fd, char **line);
 
 void		ft_putchar(unsigned char c);
 void		ft_putchar_fd(char c, int fd);
