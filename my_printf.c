@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fdlen.c                                         :+:      :+:    :+:   */
+/*   my_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeziyan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/22 18:29:47 by mmeziyan          #+#    #+#             */
-/*   Updated: 2017/03/22 18:30:08 by mmeziyan         ###   ########.fr       */
+/*   Created: 2017/02/07 03:50:12 by mmeziyan          #+#    #+#             */
+/*   Updated: 2017/02/15 21:28:55 by mmeziyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_fdlen(char *av)
+void		my_printf(const char *str, ...)
 {
-	int i;
-	char buffer[1];
-	int fd;
+	va_list ap;
 
-	i = 0;
-	fd = open(av, O_RDONLY);
-	while(read(fd, buffer, 1))
-		i++;
-	return (i);
+	va_start(ap, str);
+	while (*str)
+	{
+		if (*str != '%')
+			write(1, str, 1);
+		if (*str == '%')
+		{
+			if (*++str == 's')
+				ft_putstr(va_arg(ap, char *));
+			if (*str == 'c')
+				ft_putchar((char)va_arg(ap, int));
+			if (*str == 'd')
+				ft_putnbr(va_arg(ap, int));
+		}
+		str++;
+	}
 }
